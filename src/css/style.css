@@ -1,0 +1,32 @@
+:root {
+    --font-body: Arial, Helvetica, sans-serif;
+    --font-headline: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* colors */
+    --primary-color: #85BDBF;
+    --secondary-color: #053C5E;
+    --tertiary-color: #A9714B;
+    --light-brown: #EDDED4;
+    --dark-brown: #303030;
+  
+    /* sizes */
+    --font-base: 18px;
+    --small-font: 0.8em;
+    --large-font: 1.2em;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    color: var(--dark-brown);
+  }
+  img {
+    max-width: 100%;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
