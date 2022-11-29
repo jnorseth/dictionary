@@ -38,6 +38,8 @@
     "last 3 safari versions"
   ],
   "dependencies": {
-    "colors": "^1.4.0"
+    "axios": "^1.2.0",
+    "colors": "^1.4.0",
+    "node-fetch": "^3.3.0"
   }
 }

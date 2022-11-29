@@ -5,18 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dictionary API | Home</title>
-    <link rel="stylesheet" href="css/style.css" />
-
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
     <header class="divider"></header>
     <main class="divider">
-        <h1>Welcome to my dictionary</h1>
-
-        <div class="w3-container w3-theme w3-padding-16">
-            <h2>Please enter a word</h2>
-
+        <template id="definition-card-template">
+            <li class="definition-card">
+                <h3 class="cardDefinition"></h3>
+                <h2 class="cardSynonymns"></h2>
+            </li>
+          </template><br>
+        <div class="top-divider">
+            <h1>Search for another word</h1>
+            <br>
             <label for="word">Get definition of:</label>
             <input type="text" id="word" value='ambidextrous'>
 
@@ -24,13 +27,12 @@
             <button class="define" id="setWord">Define It!</button>
             <br>
             <br>
-            <div id="wordList" class='grid-container'></div>
         </div>
     </main>
     <footer></footer>
 </body>
-<!-- <script type="module" src="js/getWord.js"></script> -->
-<script type="module" src="./js/main.js"></script>
-<script type="module" src="./js/setWord.js"></script>
+
+<script type="module" src="../js/main.js"></script>
+<script type="module" src="../js/setWord.js"></script>
 
 </html>
