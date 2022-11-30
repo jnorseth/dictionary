@@ -1,13 +1,15 @@
     import fetch from 'node-fetch';
-    import { getLocalStorage } from './utils';
+//     import { getLocalStorage } from './utils';
 
-//event listener for fetch
-document.getElementById('getWord').addEventListener('click', getWord);
+// //event listener for fetch
+// document.getElementById('getWord').addEventListener('click', getWord);
 
-function getWord() {
-    let wordDefinitions = document.getElementById('wordDefinitions');        //  definitons go here
-    let word       = document.getElementById('word');               //  word input
-    
+
+export function getWord() {
+    // let wordDefinitions = document.getElementById('wordDefinitions');        //  definitons go here
+    // let word       = document.getElementById('word');               //  word input
+    const word = urlParams.get('word')
+    console.log(word);
 
     if (word.value.length === 0) {
         wordDefinitions.innerHTML = 'Please enter a word';
@@ -28,19 +30,20 @@ function getWord() {
         .then(res => res.json())
         .then(json => console.log(json))
         .catch(err => console.error('error:' + err))
-        .then(words => {
-            let innerHTML = "";
-    let number = 0;
-    for (let definition of definitions) {
-        number++;
-        innerHTML += 
-        `<div class="grid-item">
-        <h4>Definition: ${definition.number}</h4>
+    //     .then(words => {
+    //         let innerHTML = "";
+    // let number = 0;
+    // for (let definition of definitions) {
+    //     number++;
+    //     innerHTML += 
+    //     `<div class="grid-item">
+    //     <h4>Definition: ${definition.number}</h4>
         
-    </div>`;
-    }
-    wordList.innerHTML = innerHTML;
-        });
+    // </div>`;
+    // }
+    // wordList.innerHTML = innerHTML;
+        // });
+        return word;
 
 }
 // .then(weather => {                  //  with the resulting JSON data do something

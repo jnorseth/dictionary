@@ -1,5 +1,28 @@
 import { getLocalStorage, setLocalStorage, loadHeaderFooter } from './utils'
+import {getWord} from './getWord'
 
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+
+getWord(urlParams);
+console.log(getWord)
+
+function showWords(words) {
+    let tableBody = document.getElementById('bookList');
+    let row = '';
+    words.results.forEach((word,idx) => {
+        if (word.synonyms === undefined)    word.synonyms = [];
+        let synonyms = '<ul>';
+        word.synonyms.forEach(s => synonyms += `<li>${s}</li>`);
+        synonyms += '</ul>';
+        row += `<tr class="w3-theme-${idx%2>0?'l2':'l3'}">
+                    <td>${word.definition}</td>
+                    <td>${synonyms}</td>
+                </tr>`
+            });
+    tableBody.innerHTML = row;
+}
 export default class ProductDetails {
   constructor(productId, ExternalServices, category) {
     this.productId = productId
@@ -48,12 +71,9 @@ export default class ProductDetails {
     }
   }
 
-  renderProductDetails() {
-    const discount =
-      this.product.ListPrice != this.product.FinalPrice
-        ? `<p class="product-card__price"><strike>${this.product.ListPrice}</strike> ${this.product.FinalPrice}</p>`
-        : `<p class="product-card__price">${this.product.ListPrice}</p>`
-    const newProduct = `<h3>${this.product.Brand.Name}</h3>
+  renderWordDetails() {
+    
+    const newWord = `<h3>${this.product.Brand.Name}</h3>
         <h2 class="divider">${this.product.Name}</h2>
         <img
           class="divider"
