@@ -1,5 +1,3 @@
-// import { synWord} from "./synWord";
-
 
 document.getElementById('setWord').addEventListener('click', setWord);
 
