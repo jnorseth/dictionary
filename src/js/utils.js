@@ -36,12 +36,7 @@ export function qs(selector, parent = document) {
     callback
   ) {
     let clone = templateElement.content.cloneNode(true)
-    if (callback) {
-      clone = callback(clone, data)
-    } else if (!homepage && isHeader) {
-      clone.querySelector('a').href = '../index.html'
-      clone.querySelector('#cart-link').href = '../cart/'
-    }
+    
     parentElement.appendChild(clone)
   }
   
