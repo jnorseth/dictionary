@@ -1,8 +1,8 @@
 
-import { loadHeaderFooter } from '/src/utils.js'
+import { loadHeaderFooter } from './utils.js'
 
 
-loadHeaderFooter('/src/partials/header.html', '/src/partials/footer.html', true)
+loadHeaderFooter('./partials/header.html', './partials/footer.html', true)
 
 
 

@@ -29,11 +29,11 @@ export function qs(selector, parent = document) {
   
   export function renderWithTemplate(
     templateElement,
-    parentElement,
-    homepage,
-    isHeader = false,
-    data,
-    callback
+    parentElement
+    // homepage,
+    // isHeader = false,
+    // data,
+    // callback
   ) {
     let clone = templateElement.content.cloneNode(true)
     
