@@ -58,8 +58,8 @@ export function showWords(words) {
     let card = document.getElementById('word-detail');
     let row = '';
     row += `<div class="word">
-    <h1>${words.word}</h1>
-    <h4>pronounciation: <em>${words.pronunciation.all}</em> &nbsp;&nbsp;syllables: ${words.syllables.count}</h4>
+    <h1 class="highlight"><b>${words.word}</b></h1>
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pronounciation: <em>${words.pronunciation.all}</em> &nbsp;&nbsp;syllables: ${words.syllables.count}</h4>
     <h3>Definitions:</h3>
     </div>
     <div class= definitionCards>`;
