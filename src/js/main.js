@@ -7,4 +7,3 @@ loadHeaderFooter('./partials/header.html', './partials/footer.html', true)
 
 
 
-

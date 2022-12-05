@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dictionary API | About Me</title>
-    <link rel="stylesheet" href="/css/style.css" />
 
-  </head>
-  <body>
-    <header class="divider"></header>
-    <main class="divider">
-      <h1>About Me</h1>
-    </main>
-    <footer></footer>
-  </body>
-  <script type="module" src="/js/main.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dictionary API | About Me</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/gallery.css" />
+
+</head>
+
+<body>
+  <header class="divider"></header>
+  <main class="divider">
+    <h1>About Me</h1>
+    <div class="col2-grid-wrapper">
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 5</div>
+          <img src="/images/julie.jpeg" style="width:100%">
+          <div class="text">About Julie</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <img src="/images/camp.jpeg" style="width:100%">
+          <div class="text">Family trip to Yellowstone</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <img src="/images/chrisgrad.jpg" style="width:100%">
+          <div class="text">My husband's graduation in 2017</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 5</div>
+          <img src="/images/garden.jpeg" style="width:100%">
+          <div class="text">I love to garden</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 5</div>
+          <img src="/images/baptism.jpeg" style="width:100%">
+          <div class="text">My oldest daughter's baptism in 2021</div>
+        </div>
+
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+      <div>
+        <h4>I am Julie Norseth, a 31 year old student and mother living in Northern Utah. I have had interest in
+          technology and web design from a young age, and hope to expand my interest and passion into a career.
+          Graduating from BYU-I is my next goal in that pursuit. I will graduate on Dec. 15th with a BS in Applied
+          Technology with Web Development and Systems Administration Certificates. I also received my CCNA as part of my
+          Senior Project.<br><br>
+          I've been married to my husband Chris for 11 years. We met while attending Weber State University. I left
+          school to stay home with our children while he finished his degree in Supply Chain Management. He has
+          supported and cheered me on as I have gone back to finish. We have four kids, all girls, and are so grateful
+          for the life we have been blessed with. In my free time I love crochet, graphic design, reading, gardening,
+          and camping. </h4>
+      </div>
+    </div><br><br>
+  </main>
+  <footer></footer>
+</body>
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/gallery.js"></script>
+
 </html>

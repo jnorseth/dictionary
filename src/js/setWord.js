@@ -69,7 +69,7 @@ export function showWords(words) {
         word.synonyms.forEach(s => synonyms += `<li>${s}</li>`);
         synonyms += '</ul>';
         row += `<ul>
-                    <div class="card">
+                    <div  class="card">
                     <li>${word.definition}</li>
                     <h4>Synonymns:</h4>
                     <li>${synonyms}</li></div>
@@ -79,5 +79,7 @@ export function showWords(words) {
     card.innerHTML = row;
     
 }
+
+
 
 
