@@ -2,58 +2,55 @@
 document.getElementById('setWord').addEventListener('click', setWord);
 
 export function setWord() {
-    
-    let word       = document.getElementById('word').value;               //  word input
 
+    let word = document.getElementById('word').value;               //  word input
+    try {
+        if (!word) {
+            throw new SyntaxError("Please enter a word.");
+        }
+        
+    } catch (err) {
+        alert(err.message);
+        return;
+    }
     const url = `https://wordsapiv1.p.rapidapi.com/words/${word}`;
     console.log(word);
     const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': '84f67fb36dmsh8e88990056641a8p15b3d5jsn6b051431e6d3',
-        'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
-      }
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '84f67fb36dmsh8e88990056641a8p15b3d5jsn6b051431e6d3',
+            'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+        }
     };
-    
-    fetch(url, options)        
-        .then(res => res.json())
-        .then(json => showWords(json))       
-        .catch(err => console.error('error:' + err));
 
-        fetch(url, options)  
-        .then((response) => response.text())
-        .then((responseText) => {
-             console.log(JSON.parse(responseText));
-        })
-        .catch((error) => {
-             console.log("reset client error-------",error);
+    fetch(url, options)
+    .then((response) => {
+        // 1. check response.ok
+        if (response.ok) {
+          return response.json();
+        }
+        return Promise.reject(response); // 2. reject instead of throw
+      })
+        .then(json => showWords(json))
+        .catch((response) => {
+            console.log(response.status);
+            try{
+            if (response.status == 404) {
+                throw new Error("That word is not contained in my dictionary, please try again.")
+            }
+        }catch (err) {
+                alert(err.message);
+                return;
+            }
         });
-    }
-  
-
-export function renderWord(words){
-        let header = document.getElementById('word-header');
-    let topWord = '';
-    // words.syllables.forEach((word) => {
-    //     let list = `<p>`;
-    //     word.list.forEach(l => list += `<em>${l}</em>`);
-    //     list += '</p>';
-        topWord =+ `<h1>${word.word}</h1>`
-    header.innerHTML = topWord;
+    
+        
 }
 
+
+
 export function showWords(words) {
-    // let header = document.getElementById('word-header');
-    // let h1 = '';
-    // words.syllables.forEach((word) => {
-    //     let list = `<p>`;
-    //     word.list.forEach(l => list += `<em>${l}</em>`);
-    //     list += '</p>';
-    //     h1 =+ `<h1>${word}</h1>
-    //     <h2>${word.pronunciation}</h2>
-    //     <br>${list}`
-    // })
-    // header.innerHTML = h1;
+
 
     let card = document.getElementById('word-detail');
     let row = '';
@@ -64,7 +61,7 @@ export function showWords(words) {
     </div>
     <div class= definitionCards>`;
     words.results.forEach((word) => {
-        if (word.synonyms === undefined)    word.synonyms = [];
+        if (word.synonyms === undefined) word.synonyms = [];
         let synonyms = '<ul>';
         word.synonyms.forEach(s => synonyms += `<li>${s}</li>`);
         synonyms += '</ul>';
@@ -74,10 +71,10 @@ export function showWords(words) {
                     <h4>Synonymns:</h4>
                     <li>${synonyms}</li></div>
                 </ul>`
-            });
+    });
     row += '</div>'
     card.innerHTML = row;
-    
+
 }
 
 

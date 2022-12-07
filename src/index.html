@@ -16,7 +16,8 @@
 
         <div>
             <label for="word">Get definition of:</label>
-            <input type="text" id="word" value='ambidextrous'>
+            <span id="error"></span>
+            <input type="text" id="word" value='ambidextrous' required>
 
 
             <button class="define" id="setWord">Define It!</button>
@@ -28,18 +29,8 @@
     </main>
     <footer></footer>
 </body>
-<!-- <script type="module" src="js/getWord.js"></script> -->
-<script>function mobileCard(){
-    document.getElementById("card").innerHTML = `<style>
-    .card:active{
-    position: relative;
-    min-height: 250px;
-    height: fit-content;
-    background-color: var(--dark-brown);
-    color: var(--light-brown);
-    }</style>`;
-    }
-</script>
+
+
 <script type="module" src="/js/main.js"></script>
 <script type="module" src="/js/setWord.js"></script>
 </html>
