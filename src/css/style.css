@@ -73,6 +73,10 @@
   .highlight {
     color: var(--tertiary-color);
   }
+  .word-input:focus{
+    outline: none;
+    border: 2px solid var(--secondary-color);
+  }
   
   .define{
     background-color: var(--dark-brown);
@@ -83,7 +87,6 @@
   }
   .define:hover {
     background-color: var(--secondary-color);
-    color: var(--dark-brown);
   }
  
   .top-divider {
